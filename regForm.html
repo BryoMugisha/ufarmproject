@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+    
+    <!-- <script src="./validation.js"></script> -->
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+    <!-- nav starts here -->
+         
+
+         
+    <!-- nav ends here -->
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card-body">
+                <header class="card-header">
+                    <h4 class="card-title">Register Officer</h4>
+                </header>
+                <!-- <form id="regForm" action="#" name="register" onsubmit="return Validate(event);" method="POST"> -->
+                
+                <form id="regForm" action="#" name="register" onsubmit="return Validate();" method="POST">
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label>First Name </label>
+                            <input class="form-control" id="fname" name="firstname">
+                            <small id="fnameErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label>Last Name </label>
+                            <input class="form-control" id="lname" name="lastname">
+                            <small id="lnameErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label>Email</label>
+                            <input class="form-control" id="mail" name="email">
+                            <small id="mailErr"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label>Unique Number</label>
+                            <input class="form-control" id="uniquenumber" name="uniquenumber" placeholder="Eg.AO-001">
+                            <small id="uniquenoErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label for="choice">Sex:</label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" id="female" type="radio" name="gender"
+                                    value="female"><span class="form-check-label">Female </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" id="male" type="radio" name="gender" value="male"><span
+                                    class="form-check-label">Male </span>
+                            </label>
+                            <small id="genderErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label for="check">Language:</label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" id="english" type="checkbox" name="language"
+                                    value="English"><span class="form-check-label">English </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" id="luganda" type="checkbox" name="language"
+                                    value="Luganda"><span class="form-check-label">Luganda </span>
+                            </label>
+                            <small id="langErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label>Password</label>
+                            <input class="form-control" id="password" type="password" name="password">
+                            <small id="passErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label>Role</label>
+                            <select class="form-control" id="role" name="role">
+                                <option value="">(Select a role)</option>
+                                <option value="AgricOfficer">Agric Officer</option>
+                                <option value="UrbanFarmer">Urban Farmer</option>
+                                <option value="FarmerOne">Farmer One</option>
+                            </select>
+                            <small id="roleErr"></small>
+                        </div>
+                    </div>
+                    <!-- Added inputs for calculations -->
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label>Cost</label>
+                            <input type="number" class="form-control" id="amount" name="cost" oninput="calcTotal();">
+                            <small id="costErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label>Quantity of items</label>
+                            <input type="number" class="form-control" id="quantity" name="items" oninput="calcTotal();">
+                            <small id="itemsErr"></small>
+                        </div>
+                        <div class="col form-group">
+                            <label>Total cost</label>
+                            <input type="number" class="form-control" id="total" name="totalcost">
+                            <small id="totalErr"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <button class="btn btn-primary btn-block" id="submit">Register </button>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group"><a class="button" href="/login">Login</a></div>
+                    </div>
+                
+                </form>
+                <footer class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="col-md-12">© 2023 UFarm</div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="./regFormValidation.js"></script> -->
+    <script src="./regFormValidation2.js"></script>
+</body>
+
+</html>
